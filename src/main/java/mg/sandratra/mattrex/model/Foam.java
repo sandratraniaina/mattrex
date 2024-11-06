@@ -1,6 +1,9 @@
 package mg.sandratra.mattrex.model;
 
+import java.sql.Connection;
 import java.sql.Date;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
 
 public class Foam extends Dimension {
     private int id;
@@ -9,6 +12,28 @@ public class Foam extends Dimension {
     private double residue;
     private Date creationDate;
     private boolean isLast;
+
+    // Methods
+    public int create(Connection connection) {
+        int dimensionId = super.create(connection);
+        String sql = "INSERT INTO foam (dimension_id, parent_id, cost_price, residue, creation_date) VALUES (?, ?, ?, ?, ?)";
+        try(PreparedStatement stmt = connection.prepareStatement(sql)) {
+            stmt.setInt(1, dimensionId);
+            stmt.setInt(2, parent.getId());
+            stmt.setDouble(3, costPrice);
+            stmt.setDouble(4, residue);
+            stmt.setDate(5, creationDate);
+            stmt.executeUpdate();
+
+            if (stmt.getGeneratedKeys().next()) {
+                return stmt.getGeneratedKeys().getInt(1);
+            }
+            return -1;
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+
+    }
 
     // Constructors
     public Foam() {
