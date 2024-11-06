@@ -14,16 +14,19 @@ public class StandardSize extends Dimension {
         this.setId(id);
     }
 
-    public StandardSize(String name, double sellingPrice) {
+    public StandardSize(String name, Dimension dimension, double sellingPrice) {
         this();
         this.setName(name);
+        this.setWidth(dimension.getWidth());
+        this.setHeight(dimension.getHeight());
+        this.setDepth(dimension.getDepth());
         this.setSellingPrice(sellingPrice);
     }
 
-    public StandardSize(int id, String name, double sellingPrice) {
-        this(id);
-        this.setName(name);
-        this.setSellingPrice(sellingPrice);
+    public StandardSize(int id, String name, Dimension dimension, double sellingPrice) {
+        this(name, dimension, sellingPrice);
+        this.setId(id);
+
     }
 
     // Getters and setters
