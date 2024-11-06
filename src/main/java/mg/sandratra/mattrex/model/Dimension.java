@@ -1,7 +1,6 @@
 package mg.sandratra.mattrex.model;
 
 public class Dimension {
-    private int id;
     private double width;
     private double height;
     private double depth;
@@ -39,13 +38,5 @@ public class Dimension {
 
     public void setDepth(double depth) {
         this.depth = depth;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
     }
 }
