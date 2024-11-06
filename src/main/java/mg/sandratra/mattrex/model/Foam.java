@@ -19,22 +19,22 @@ public class Foam extends Dimension {
         this.setId(id);
     }
 
-    public Foam(Foam parent, double costPrice, double residue, Date creationDate, boolean isLast) {
+    public Foam(Foam parent, Dimension dimension, double costPrice, double residue, Date creationDate, boolean isLast) {
         this();
         this.setParent(parent);
+        this.setWidth(dimension.getWidth());
+        this.setHeight(dimension.getHeight());
+        this.setDepth(dimension.getDepth());
         this.setCostPrice(costPrice);
         this.setResidue(residue);
         this.setCreationDate(creationDate);
         this.setLast(isLast);
     }
 
-    public Foam(int id, Foam parent, double costPrice, double residue, Date creationDate, boolean isLast) {
-        this(id);
-        this.setParent(parent);
-        this.setCostPrice(costPrice);
-        this.setResidue(residue);
-        this.setCreationDate(creationDate);
-        this.setLast(isLast);
+    public Foam(int id, Foam parent, Dimension dimension, double costPrice, double residue, Date creationDate,
+            boolean isLast) {
+        this(parent, dimension, costPrice, residue, creationDate, isLast);
+        this.setId(id);
     }
 
     // Getters and setters
