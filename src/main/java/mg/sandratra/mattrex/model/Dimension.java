@@ -5,6 +5,11 @@ public class Dimension {
     private double height;
     private double depth;
 
+    // Methods
+    public double calculateVolume() {
+        return width * height * depth;
+    }
+
     // Constructors
     public Dimension() {
     }
