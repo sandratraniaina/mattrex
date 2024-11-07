@@ -17,7 +17,6 @@ public class PgConnection {
         try (InputStream input = PgConnection.class.getClassLoader().getResourceAsStream("database.properties")) {
             if (input == null) {
                 System.out.println("Sorry, unable to find database.properties");
-                return;
             }
 
             // Load properties file
