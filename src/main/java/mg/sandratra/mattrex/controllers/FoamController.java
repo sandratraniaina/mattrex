@@ -2,7 +2,7 @@ package mg.sandratra.mattrex.controllers;
 
 import mg.sandratra.mattrex.models.entities.Dimension;
 import mg.sandratra.mattrex.models.entities.Foam;
-import mg.sandratra.mattrex.models.service.FoamService;
+import mg.sandratra.mattrex.services.FoamService;
 
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;

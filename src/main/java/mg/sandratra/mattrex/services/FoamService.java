@@ -1,4 +1,4 @@
-package mg.sandratra.mattrex.models.service;
+package mg.sandratra.mattrex.services;
 
 import mg.sandratra.mattrex.models.dao.FoamDAO;
 import mg.sandratra.mattrex.models.entities.Foam;
