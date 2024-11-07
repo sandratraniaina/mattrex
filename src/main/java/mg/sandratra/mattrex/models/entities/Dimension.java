@@ -11,16 +11,17 @@ public class Dimension {
     }
 
     public Dimension(int id, double width, double height, double depth) {
-        this.id = id;
-        this.width = width;
-        this.height = height;
-        this.depth = depth;
+        this.setId(id);
+        this.setWidth(width);
+        this.setHeight(height);
+        this.setDepth(depth);
     }
 
+    // Constructor without ID for new objects
     public Dimension(double width, double height, double depth) {
-        this.width = width;
-        this.height = height;
-        this.depth = depth;
+        this.setWidth(width);
+        this.setHeight(height);
+        this.setDepth(depth);
     }
 
     // Getters and Setters
