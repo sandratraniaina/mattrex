@@ -1,4 +1,4 @@
-package mg.sandratra.mattrex.models;
+package mg.sandratra.mattrex.models.entities;
 
 public class Dimension {
     private int id;
