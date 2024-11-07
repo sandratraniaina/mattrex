@@ -11,6 +11,11 @@ public class Foam {
     private Timestamp creationDate;
     private boolean isLast;
 
+    // Method
+    public double getVolume() {
+        return  getDimension().calculateVolume();
+    }
+
     // Default constructor
     public Foam() {
     }
